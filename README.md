@@ -2,6 +2,10 @@
 
 Sitio de ejemplo con formulario de contacto.
 
+## Demo
+
+El sitio está publicado en GitHub Pages: https://<tu-usuario>.github.io/Prueba/
+
 ## Configuración de EmailJS
 
 El formulario está conectado con [EmailJS](https://www.emailjs.com/).
