@@ -14,13 +14,47 @@
     });
   }
 
-  // Demo de envío de formulario (reemplazar por integración real)
+  // Inicializar EmailJS (reemplaza "PUBLIC_KEY" con tu clave pública)
+  if (window.emailjs) {
+    emailjs.init('PUBLIC_KEY');
+  }
+
+  const serviceID = 'SERVICE_ID';
+  const templateID = 'TEMPLATE_ID';
+
+  // Envío del formulario con validación básica
   const form = document.querySelector('.contact-form');
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      alert('¡Gracias! Te contactaremos muy pronto.');
-      form.reset();
+
+      const nombre = form.from_name.value.trim();
+      const correo = form.reply_to.value.trim();
+      const mensaje = form.message.value.trim();
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!nombre || !correo || !mensaje) {
+        alert('Por favor completa todos los campos.');
+        return;
+      }
+
+      if (!emailRegex.test(correo)) {
+        alert('Ingresa un correo válido.');
+        return;
+      }
+
+      emailjs.send(serviceID, templateID, {
+        from_name: nombre,
+        reply_to: correo,
+        message: mensaje
+      }).then(() => {
+        alert('¡Gracias! Te contactaremos muy pronto.');
+        form.reset();
+      }).catch((err) => {
+        console.error('Error al enviar', err);
+        alert('Ocurrió un problema al enviar el mensaje.');
+      });
     });
   }
 })();
