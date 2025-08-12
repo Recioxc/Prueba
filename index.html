@@ -72,6 +72,44 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .producto-card {
+            background-color: var(--blanco);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .producto-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .producto-card h3 {
+            margin: 0.75rem 0 0.5rem;
+        }
+
+        .producto-card .precio {
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: #25d366;
+            color: var(--blanco);
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
         .testimonios {
             background-color: #f9f9f9;
             padding: 2rem;
@@ -159,6 +197,30 @@
             <div class="servicio">
                 <h3>Papelería creativa</h3>
                 <p>Invitaciones, etiquetas y packaging único.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Productos destacados</h2>
+        <div class="productos">
+            <div class="producto-card">
+                <img src="https://via.placeholder.com/300x200" alt="Taza personalizada">
+                <h3>Taza personalizada</h3>
+                <p class="precio">$150 MXN</p>
+                <a class="btn-whatsapp" href="https://wa.me/521234567890?text=Hola%20me%20interesa%20Taza%20personalizada" target="_blank">Quiero este</a>
+            </div>
+            <div class="producto-card">
+                <img src="https://via.placeholder.com/300x200" alt="Playera estampada">
+                <h3>Playera estampada</h3>
+                <p class="precio">$200 MXN</p>
+                <a class="btn-whatsapp" href="https://wa.me/521234567890?text=Hola%20me%20interesa%20Playera%20estampada" target="_blank">Quiero este</a>
+            </div>
+            <div class="producto-card">
+                <img src="https://via.placeholder.com/300x200" alt="Termo sublimado">
+                <h3>Termo sublimado</h3>
+                <p class="precio">$250 MXN</p>
+                <a class="btn-whatsapp" href="https://wa.me/521234567890?text=Hola%20me%20interesa%20Termo%20sublimado" target="_blank">Quiero este</a>
             </div>
         </div>
     </section>
